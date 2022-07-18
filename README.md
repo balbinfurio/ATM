@@ -1,1 +1,1 @@
-Proyecto cajeto automatico Platzi
+Proyecto cajero automatico Platzi
