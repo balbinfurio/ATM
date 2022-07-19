@@ -26,7 +26,7 @@ function cashWithdrawal()
             }
 
             withdrawn.push(new Bill(bi.value, paper));
-            money = money - (bi.value * paper);
+            money -= (bi.value * paper);
         }
     }
     if(money > 0)
@@ -37,16 +37,21 @@ function cashWithdrawal()
     {
         for(let w of withdrawn)
         {
-            res.innerHTML = res.innerHTML + w.amount + " Bills of $" + w.value + "<br />";
+            if(w.amount > 0)
+            {
+                res.innerHTML += w.amount + " Bills of $" + w.value + "<br />";
+            }
         }
     }
 }
 
 let cash = [];
 let withdrawn = [];
+cash.push(new Bill(100, 10));
 cash.push(new Bill(50, 10));
 cash.push(new Bill(20, 30));
 cash.push(new Bill(10, 10));
+cash.push(new Bill(5, 10));
 
 let money = 0;
 let div = 0;
@@ -55,5 +60,3 @@ let paper = 0;
 let res = document.getElementById("res");
 let b = document.getElementById("withdraw");
 b.addEventListener("click", cashWithdrawal);
-
-
