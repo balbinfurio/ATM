@@ -31,13 +31,13 @@ function cashWithdrawal()
     }
     if(money > 0)
     {
-        document.write("Im a poor ATM");
+        res.innerHTML = "Im a bad ATM and I can't give u that amount";
     }
     else
     {
         for(let w of withdrawn)
         {
-            document.write(w.amount + " Bills of $" + w.value + "<br />");
+            res.innerHTML = res.innerHTML + w.amount + " Bills of $" + w.value + "<br />";
         }
     }
 }
@@ -52,6 +52,7 @@ let money = 0;
 let div = 0;
 let paper = 0;
 
+let res = document.getElementById("res");
 let b = document.getElementById("withdraw");
 b.addEventListener("click", cashWithdrawal);
 
